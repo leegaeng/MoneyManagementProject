@@ -6,7 +6,7 @@
 body {
 	font: 85% Arial, Helvetica, sans-serif;
 	color: #333;
-background: #FDFDFD url(/MoneyManagementProject/assets/images/back.png)
+	background: #FDFDFD url(/MoneyManagementProject/assets/images/back.png)
 		repeat-y top center;
 	margin: 0;
 	text-align: center;
@@ -58,9 +58,9 @@ div[id="container"] a,div[id="container"] a:visited {
 
 #intro #pageHeader {
 	width: 400px;
-	height: 300px;
 	padding: 0;
-	margin-top: -10px; text-align : right;
+	margin-top: -10px;
+	text-align: right;
 	color: #363435;
 	text-align: right;
 }
