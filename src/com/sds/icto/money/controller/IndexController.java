@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-	@RequestMapping("/index")
+	@RequestMapping("/index")	
 	public String index(){
-		System.out.println("¾È³ç????????");
+		System.out.println("ì•ˆë…•");
 		return "main/index";
 	}
 	
