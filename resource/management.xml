@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="management">
+	<typeAlias alias="ManagementVo" type="com.sds.icto.money.vo.ManagementVo" />
+
+	<resultMap class="ManagementVo" id="managementMap">
+		<result column="aid" property="aid" />
+		<result column="atitle" property="atitle" />
+		<result column="atotalmoney" property="atotalmoney" />
+		<result column="aincome" property="aincome" />
+		<result column="aoutcome" property="aoutcome" />
+	</resultMap>
+
+	<insert id="insert" parameterClass="map">
+		<![CDATA[
+		insert into management values (#mid#,#aid#,#atitle#)
+		]]>
+	</insert>
+
+
+</sqlMap> 
