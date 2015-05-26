@@ -13,7 +13,7 @@
 	<insert id="insert" parameterClass="MemberVo">
 		<![CDATA[
 		insert into member 
-		values (member_no_seq.nextval, #mid#,#mname#,#mpassword#)
+		values (#mid#,#mname#,#mpassword#)
 		]]>
 	</insert>
 

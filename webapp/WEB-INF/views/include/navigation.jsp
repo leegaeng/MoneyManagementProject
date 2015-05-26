@@ -34,9 +34,18 @@
 	<div id="lselect">
 		<ul>
 			<li><a href="/MoneyManagementProject/index">Home</a></li>
-			<li><a href="/MoneyManagementProject/member/login">Login</a></li>
+
+			<c:choose>
+				<c:when test="${!empty authMember}">
+					<li><a href="/MoneyManagementProject/member/logout">Logout</a></li>
+				</c:when>
+				<c:when test="${empty authMember}">
+					<li><a href="/MoneyManagementProject/member/login">Login</a></li>
+				</c:when>
+			</c:choose>
+			
 			<li><a href="">AccountBook</a></li>
-			<li><a href="">MyInfo</a></li>
+			<li><a href="/MoneyManagementProject/member/uinfo">MyInfo</a></li>
 			<li><a href="">Contacts</a></li>
 		</ul>
 	</div>
