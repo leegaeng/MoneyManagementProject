@@ -9,13 +9,23 @@
 <title>내 돈을 부탁해</title>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="/MoneyManagementProject/assets/css/main.css" />
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/MoneyManagementProject/assets/css/login.css" />
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	function login() {
+
+		location.href = "/MoneyManagementProject/member/join";
+
+	}
+</script>
 </head>
 <body>
 	<div id="container">
 		<div id="intro">
 			<div id="pageHeader">
 				<jsp:include page="/WEB-INF/views/include/header.jsp" flush="false" />
-
 			</div>
 
 		</div>
@@ -39,7 +49,7 @@
 					<p>
 					<p>
 						<input type="submit" value="로그인"><input type="button"
-							value="회원가입">
+							value="회원가입" onclick="login()">
 				</form>
 
 
