@@ -32,24 +32,21 @@
 
 		<div id="supportingText">
 			<div id="explanation" align="center">
+
+
 				<img src="/MoneyManagementProject/assets/images/intro.jpg"
-					width="100px">
-
-
-				<h2>로그인</h2>
+					width="100px" id="logo">
 
 				<form id="login-form" name="loginform" method="post"
 					action="/MoneyManagementProject/member/login">
-					<label class="block-label" for="email">아이디</label> <input id="mid"
-						name="mid" type="text" value="">
 
-					<p>
-						<label class="block-label">패스워드</label> <input name="mpassword"
-							type="mpassword" value="">
-					<p>
-					<p>
-						<input type="submit" value="로그인"><input type="button"
-							value="회원가입" onclick="login()">
+
+					<h2>로그인</h2>
+
+					<input id="mid" name="mid" type="text" value="" placeholder="id">
+					<input name="mpassword" type="password" value=""
+						placeholder="password"> <input type="submit" value="로그인"><input
+						type="button" value="회원가입" onclick="login()">
 				</form>
 
 
