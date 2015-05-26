@@ -14,7 +14,9 @@
 	<div id="container">
 		<div id="intro">
 			<div id="pageHeader">
-				<jsp:include page="/WEB-INF/views/include/header.jsp" flush="false" />
+				<jsp:include page="/WEB-INF/views/include/header.jsp" />
+				<img src="/MoneyManagementProject/assets/images/intro.jpg">
+
 			</div>
 
 		</div>
@@ -31,8 +33,8 @@
 				<p class="p1">
 					<span>회원가입을 하세요!</span>
 				<p class="p2">
-					<span>회원가입절차 너무 까다로우시죠? 매번 주민등록번호부터 주소까지, 귀찮아귀찮아!
-					  저희는 아이디, 이름, 패스워드만으로 가입이 가능합니다</span>
+					<span>회원가입절차 너무 까다로우시죠? 매번 주민등록번호부터 주소까지, 귀찮아귀찮아! 저희는 아이디,
+						이름, 패스워드만으로 가입이 가능합니다</span>
 				</p>
 			</div>
 

@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.sds.icto.money.service.MemberService;
 import com.sds.icto.money.vo.MemberVo;
 
@@ -77,22 +74,22 @@ public class MemberController {
 
 		return "redirect:/index";
 	}
-//
-//	@RequestMapping(value="/checkEmail/{email}", method = RequestMethod.GET)
-//	@ResponseBody
-//	public String checkEmail(@PathVariable("email") String email) {
-//
-//		String result = null;
-//		MemberVo vo = new MemberVo();
-//		vo.setEmail(email);
-//
-//		vo = memberSev.authUser(vo);
-//		if (vo == null) {
-//			result = "true";
-//		} else {
-//			result = "false";
-//		}
-//
-//		return result;
-//	}
+	//
+	// @RequestMapping(value="/checkEmail/{email}", method = RequestMethod.GET)
+	// @ResponseBody
+	// public String checkEmail(@PathVariable("email") String email) {
+	//
+	// String result = null;
+	// MemberVo vo = new MemberVo();
+	// vo.setEmail(email);
+	//
+	// vo = memberSev.authUser(vo);
+	// if (vo == null) {
+	// result = "true";
+	// } else {
+	// result = "false";
+	// }
+	//
+	// return result;
+	// }
 }

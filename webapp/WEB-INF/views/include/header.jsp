@@ -5,5 +5,4 @@
 <h1>
 	<a href="/MoneyManagementProject/index"><span>내 돈을 부탁해</span></a>
 	<p>
-	<img src="/MoneyManagementProject/assets/images/intro.jpg">
 </h1>

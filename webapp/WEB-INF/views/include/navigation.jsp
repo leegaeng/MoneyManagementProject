@@ -33,7 +33,8 @@
 
 	<div id="lselect">
 		<ul>
-			<li><a href="">Home</a></li>
+			<li><a href="/MoneyManagementProject/index">Home</a></li>
+			<li><a href="/MoneyManagementProject/member/login">Login</a></li>
 			<li><a href="">AccountBook</a></li>
 			<li><a href="">MyInfo</a></li>
 			<li><a href="">Contacts</a></li>
