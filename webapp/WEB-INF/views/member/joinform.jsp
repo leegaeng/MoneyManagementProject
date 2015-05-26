@@ -17,7 +17,7 @@
 <script type="text/javascript">
 	$(function() {
 
-		$("#checkId").click(function() {			
+		$("#checkId").click(function() {
 			$.ajax({
 				url : "checkId/" + $("#mid").val(),
 				type : "get",
@@ -27,11 +27,12 @@
 				success : function(response) {
 					var result = $.trim(response);
 					if (result === "true") {
-						$("#resultId").html("<br>사용가능한 아이디입니다.");
+						alert("사용가능한 아이디입니다.");
 					}
 
 					if (result === "false") {
-						$("#resultId").html("<br>이미 존재하는 아이디입니다.");
+
+						alert("이미 존재하는 아이디입니다.");
 					}
 				},
 				error : function(jqXHR, status, e) {
@@ -58,24 +59,33 @@
 		<div id="supportingText">
 			<div id="explanation" align="center">
 				<img src="/MoneyManagementProject/assets/images/intro.jpg"
-					width="100px">
-
-
-				<h2>회원가입</h2>
+					width="100px" id="logo">
 
 				<form id="join-form" name="joinForm" method="post"
 					action="/MoneyManagementProject/member/join">
-					<label class="block-label" for="mid">아이디</label> <input id="mid"
-						name="mid" type="text" value=""><input type="button" value="id 중복체크" id="checkId"> 
-						<label id="resultId"></label><br><br> <label
-						class="block-label" for="mname">이름</label> <input id="name"
-						name="mname" type="text" value=""> <br><br>
-						
-					<label class="block-label">패스워드</label> <input name="mpassword"
-						type="password" value="">	<br><br>						
+					<h2>회원가입</h2>
 
-					<input type="submit" value="가입하기">
-
+					<table>
+						<tr>
+							<td>아이디</td>
+							<td><input id="mid" name="mid" type="text" value=""
+								placeholder="id"> <input type="button" value="id 중복체크"
+								id="checkId"></td>
+						</tr>
+						<tr>
+							<td>이름</td>
+							<td><input id="mname" name="mname" type="text" value=""
+								placeholder="name"></td>
+						</tr>
+						<tr>
+							<td>패스워드</td>
+							<td><input name="mpassword" type="password" value=""
+								placeholder="password"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="가입하기"></td>
+						</tr>
+					</table>
 				</form>
 
 
