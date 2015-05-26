@@ -33,8 +33,6 @@
 				mpassword=#mpassword#
 			</isNotEmpty>
 		</dynamic>
-
-
 	</select>
 
 </sqlMap> 

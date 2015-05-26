@@ -32,7 +32,7 @@ public class MemberController {
 	public String join(@ModelAttribute MemberVo vo) {
 		System.out.println(vo);
 		memberSev.joinUser(vo);
-		return "redirect:login";
+		return "member/joinsuccess";
 
 	}
 
@@ -65,7 +65,7 @@ public class MemberController {
 
 	@RequestMapping("/update")
 	public String update(@ModelAttribute MemberVo vo) {
-
+		System.out.println(vo);
 		memberSev.updateUser(vo);
 
 		return "redirect:/index";

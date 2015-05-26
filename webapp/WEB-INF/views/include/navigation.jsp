@@ -39,14 +39,16 @@
 			<c:choose>
 				<c:when test="${!empty authMember}">
 					<li><a href="/MoneyManagementProject/member/logout">Logout</a></li>
+					<li><a href="/MoneyManagementProject/member/accountbook">AccountBook</a></li>
+					<li><a href="/MoneyManagementProject/member/uinfo">MyInfo</a></li>
 				</c:when>
 				<c:when test="${empty authMember}">
 					<li><a href="/MoneyManagementProject/member/login">Login</a></li>
+					<li><a href="/MoneyManagementProject/member/login">AccountBook</a></li>
+					<li><a href="/MoneyManagementProject/member/login">MyInfo</a></li>
 				</c:when>
-			</c:choose>
+			</c:choose>						
 			
-			<li><a href="">AccountBook</a></li>
-			<li><a href="/MoneyManagementProject/member/uinfo">MyInfo</a></li>
 			<li><a href="">Contacts</a></li>
 		</ul>
 	</div>

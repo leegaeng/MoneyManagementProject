@@ -25,5 +25,12 @@ public class MemberVo {
 	public void setMpassword(String mpassword) {
 		this.mpassword = mpassword;
 	}
+	@Override
+	public String toString() {
+		return "MemberVo [mid=" + mid + ", mname=" + mname + ", mpassword="
+				+ mpassword + "]";
+	}
+	
+	
 	
 }
