@@ -9,8 +9,6 @@
 <title>내 돈을 부탁해</title>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="/MoneyManagementProject/assets/css/main.css" />
-<link rel="stylesheet" type="text/css" media="screen"
-	href="/MoneyManagementProject/assets/css/login.css" />
 
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -20,29 +18,20 @@
 	<div id="container">
 		<div id="intro">
 			<div id="pageHeader">
-				<jsp:include page="/WEB-INF/views/include/header.jsp" flush="false" />
+				<jsp:include page="/WEB-INF/views/include/header.jsp" />
+				<img src="/MoneyManagementProject/assets/images/intro.jpg">
+
 			</div>
 
 		</div>
 
 		<div id="supportingText">
 			<div id="explanation" align="center">
-				<img src="/MoneyManagementProject/assets/images/intro.jpg"
-					width="100px">
-
-
-				<div id="content">
-					<div id="user">
-						
-							회원가입을 축하합니다. <br> <br> <a
-								href="/MoneyManagementProject/member?a=loginform">로그인하기</a>
-					
-					</div>
-				</div>
-
-
-
+				<h2>회원가입을 축하드립니다!!</h2>
+				<br><br>
+				<h2><a href="/MoneyManagementProject/member/login">로그인하기</a></h2>
 			</div>
+
 
 			<div id="footer">
 				<jsp:include page="/WEB-INF/views/include/footer.jsp" />
