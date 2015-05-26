@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sds.icto.money.vo.MemberVo;
 
+
 @Repository
 public class MemberDao {
 

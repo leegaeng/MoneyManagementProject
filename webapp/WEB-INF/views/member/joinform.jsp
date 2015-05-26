@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" media="screen"
 	href="/MoneyManagementProject/assets/css/login.css" />
 
+
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 	$(function() {

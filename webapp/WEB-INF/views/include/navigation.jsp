@@ -9,6 +9,7 @@
 
 
 
+
 <ul>
 	<%-- <input type="hidden" value="${authMember.name}" id="name">
 	<c:choose>

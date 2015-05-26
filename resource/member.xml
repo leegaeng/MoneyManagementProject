@@ -10,6 +10,7 @@
 	</resultMap>
 
 
+
 	<insert id="insert" parameterClass="MemberVo">
 		<![CDATA[
 		insert into member 
