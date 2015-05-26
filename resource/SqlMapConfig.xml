@@ -19,8 +19,5 @@
 
 	<!-- sql mapping fiels -->
 	<sqlMap resource="/member.xml" />
-	<sqlMap resource="/guestbook.xml" />
-	<sqlMap resource="/board.xml" />
-
 
 </sqlMapConfig>
