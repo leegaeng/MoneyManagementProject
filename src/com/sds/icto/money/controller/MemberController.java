@@ -44,9 +44,8 @@ public class MemberController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute MemberVo vo, HttpSession session) {
 		MemberVo m = memberSev.authUser(vo);
-		if (m == null) {
+		if (m == null) {		
 			return "redirect:/member/login?result=fail";
-
 		} else {
 			session.setAttribute("authMember", m);			
 			return "redirect:/index";

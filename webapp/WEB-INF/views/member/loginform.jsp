@@ -20,6 +20,11 @@
 
 	}
 </script>
+<script type="text/javascript">
+	<c:if test="${param.result == 'fail'}">
+	alert("아이디 혹은 비밀번호가 틀렸습니다.");
+	</c:if>
+</script>
 </head>
 <body>
 	<div id="container">
@@ -38,9 +43,7 @@
 					width="100px" id="logo">
 
 				<form id="login-form" name="loginform" method="post"
-					action="/MoneyManagementProject/member/login">
-
-
+					action="/MoneyManagementProject/member/login">					
 					<h2>로그인</h2>
 
 					<input id="mid" name="mid" type="text" value="" placeholder="id">
