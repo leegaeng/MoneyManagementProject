@@ -8,6 +8,7 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.sds.icto.money.vo.AccountBookVo;
+import com.sds.icto.money.vo.AccountDetailVo;
 
 @Repository
 public class AccountBookDao {
@@ -16,11 +17,9 @@ public class AccountBookDao {
 	SqlMapClientTemplate st;
 
 	public int insert(AccountBookVo vo) {
-		
+
 		int aid = 0;
-
 		aid = (int) st.insert("accountbook.insert", vo);
-
 		return aid;
 
 	}
@@ -35,5 +34,16 @@ public class AccountBookDao {
 		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
 		list = st.queryForList("accountbook.list", mid);
 		return list;
+	}
+
+	public void update(AccountBookVo ab, AccountDetailVo ad){
+		
+		ab.setAincome(ab.getAincome()+ad.getDincome());
+		ab.setAoutcome(ab.getAoutcome()-ad.getDoutcome());
+		ab.setAtotalmoney(ab.getAtotalmoney()+ad.getDincome()-ad.getDoutcome());
+		
+		st.update("accountbook.update", ab);
+		
+		
 	}
 }

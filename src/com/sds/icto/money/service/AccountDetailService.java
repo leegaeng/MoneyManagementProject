@@ -27,4 +27,11 @@ public class AccountDetailService {
 		list = accountdetailDao.list(aid);
 		return list;
 	}
+	
+
+	public AccountDetailVo getDetail(int did) {
+		AccountDetailVo vo = new AccountDetailVo();
+		vo = accountdetailDao.get(did);
+		return vo;
+	}
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.sds.icto.money.dao.AccountBookDao;
 import com.sds.icto.money.vo.AccountBookVo;
+import com.sds.icto.money.vo.AccountDetailVo;
 
 @Service
 @Qualifier("accountbook")
@@ -33,6 +34,10 @@ public class AccountBookService {
 		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
 		list = accountbookDao.list(mid);
 		return list;
+	}
+
+	public void update(AccountBookVo ab, AccountDetailVo ad) {
+		accountbookDao.update(ab, ad);
 	}
 
 }

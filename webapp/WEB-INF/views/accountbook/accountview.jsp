@@ -11,50 +11,7 @@
 <link rel="stylesheet" type="text/css" media="screen"
 	href="/MoneyManagementProject/assets/css/main.css" />
 <link rel="stylesheet" type="text/css" media="screen"
-	href="/MoneyManagementProject/assets/css/accountbook.css" />
-<style type="text/css">
-.search {
-	margin: 20px auto;
-	width: 200px;
-}
-
-.search .field {
-	position: relative;
-}
-
-.search label {
-	background:
-		url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAQAAAC1QeVaAAAAxElEQVR4AXXPIUuDcRDA4Zv4AUSwTLEKVoNlySyCYLO98CCsahGrX0AW/QhmBRHEJghLS4JFBBXDgrJi2In78w8v4v3S8XDh4nd0DTxLEzd2RC2EnrH07trQVDrXqbhs7FvfnBDWDKWTigOpL2oWvZpYKPjio1zVHEt7BdOtaLUtHRX8MmqjRjooeCVttPBOWi+4JT1aLaDjVLpU/5ytn840Dj1IaWSpYmi8yVlTF54qh9K8nn27usJK5fC3yvfhPx7a/AE9dYwDEfKrlAAAAABJRU5ErkJggg==)
-		no-repeat 0 50%;
-	color: #eeeeee;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	top: 50%;
-	transition: left .4s, transform .4s;
-	padding-left: 1.25em;
-	position: absolute;
-}
-
-.search .input-search {
-	border: 1px solid #dfdfdf;
-	border-radius: .25em;
-	box-shadow: 0 1px 0 #bfbebf;
-	display: block;
-	font: 400 1em/1.5em sans-serif;
-	padding: .5em 1.75em;
-	width: 100%;
-}
-
-.search .input-search:focus+label,.search .input-search:valid+label {
-	left: .5em;
-	transform: translate(0, -50%);
-}
-
-.search .input-search:valid+label {
-	text-indent: -9999px;
-}
-</style>
+	href="/MoneyManagementProject/assets/css/accountdetail.css" />
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 	$(function() {
@@ -132,7 +89,7 @@
 				<c:forEach var="d" items="${list}">
 					<li class="survey-item">
 						<div class="pull-right">
-							<table>
+							<table class="accountdetailform">
 								<tr>
 									<td>${d.dtitle}</td>
 									<td>${d.dcontent}</td>
