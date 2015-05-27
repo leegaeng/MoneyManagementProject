@@ -54,13 +54,19 @@ public class AccountBookController {
 	}
 
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public String insert(@ModelAttribute AccountBookVo vo, HttpSession session) {
+	public String insert(@ModelAttribute AccountBookVo vo, HttpSession session,
+			Model m) {
 
 		MemberVo member = (MemberVo) session.getAttribute("authMember");
 		String mid = member.getMid();
 		int aid = accountBookServ.insertAccount(vo);
 		vo = accountBookServ.getAccount(aid);
 		manageServ.insertManagement(mid, vo);
+
+		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
+		list = accountBookServ.listAccount(mid);
+
+		m.addAttribute("list", list);
 
 		return "accountbook/list";
 	}

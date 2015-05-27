@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -36,18 +37,18 @@
 			class="entypo-layout"></span></span> <span class="toggler"
 			data-toggle="list"><span class="entypo-list"></span></span>
 
-		  <div id="supportingText">
+		<div id="supportingText">
 			<div id="explanation" align="center">
 
-				<c:forEach items="${list}" var="a">
-					<ul class= "surveys grid">
-						<li class="survey-item"><span class="survey-name"> <a
+				<ul class="surveys grid">
+					<c:forEach items="${list}" var="a">
+						<li class="survey-item"
+							style="background-color: rgb(${a.acolor}, 0.4)"><span
+							class="survey-name"> <a
 								href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a>
-						</span> <span class="survey-total"> ${a.atotalmoney}</span>
+						</span> <span class="survey-total"> ${a.atotalmoney} </span>
 
 							<div class="pull-right">
-								<div style="background: ${a.acolor}"></div>
-
 								<span class="survey-progress"> <span
 									class="survey-progress-bg"> <span
 										class="survey-progress-fg" style="width: ${a.aincome}%;"></span>
@@ -62,8 +63,10 @@
 									style="background: ${a.acolor}"></span>
 								</span>
 							</div></li>
-					</ul>
-				</c:forEach><input type="button" value="가계부 등록" onclick="insert()">
+					</c:forEach>
+				</ul>
+
+				<input type="button" style="margin-left:130px" value="가계부 등록" onclick="insert()">
 
 				<div id="footer">
 					<jsp:include page="/WEB-INF/views/include/footer.jsp" />
