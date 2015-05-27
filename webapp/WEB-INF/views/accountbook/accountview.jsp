@@ -43,8 +43,8 @@
 					</tr>
 					<tr>
 						<th>${a.atotalmoney}</th>
-						<th><c:if </th>
-						<th>총 지출</th>
+						<th>${a.aincome}</th>
+						<th>${a.aoutcome}</th>
 					</tr>
 
 				</table>
