@@ -17,6 +17,11 @@
 		location.href = "/MoneyManagementProject/accountbook/insert";
 	}
 </script>
+
+
+
+
+
 </head>
 <body>
 	<div id="container">
@@ -25,19 +30,19 @@
 				<jsp:include page="/WEB-INF/views/include/header.jsp" flush="false" />
 			</div>
 
+
 		</div>
 		<span class="toggler active" data-toggle="grid"><span
 			class="entypo-layout"></span></span> <span class="toggler"
 			data-toggle="list"><span class="entypo-list"></span></span>
 
-		<div id="supportingText">
+		  <div id="supportingText">
 			<div id="explanation" align="center">
 
 				<c:forEach items="${list}" var="a">
-					<ul class="surveys grid">
-						<li class="survey-item"><span class="survey-name"> <a
-								href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a>
-						</span> <span class="survey-total"> ${a.atotalmoney}</span>
+					<ul class= "surveys grid">
+						<li class="survey-item"><span class="survey-name">
+							<a href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a> </span> <span class="survey-total"> ${a.atotalmoney}</span>
 
 							<div class="pull-right">
 								<div style="background: ${a.acolor}"></div>
@@ -57,9 +62,7 @@
 								</span>
 							</div></li>
 					</ul>
-				</c:forEach>
-
-				<input type="button" value="가계부 등록" onclick="insert()">
+				</c:forEach><input type="button" value="가계부 등록" onclick="insert()">
 
 				<div id="footer">
 					<jsp:include page="/WEB-INF/views/include/footer.jsp" />
