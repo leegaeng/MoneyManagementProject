@@ -28,8 +28,8 @@ public class AccountDetailController {
 			@ModelAttribute AccountDetailVo vo, HttpSession session) {
 
 		vo.setAid(aid);
-		int did = accountdetailServ.insertDetail(vo);
-		
+//		int did = accountdetailServ.insertDetail(vo);
+	
 		return "redirect:/accountbook/accountview/"+aid;
 	}
 
