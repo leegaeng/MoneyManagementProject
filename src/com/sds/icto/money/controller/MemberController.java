@@ -25,7 +25,7 @@ public class MemberController {
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String joinForm() {
 		return "member/joinform";
-
+		
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
@@ -48,7 +48,7 @@ public class MemberController {
 			return "redirect:/member/login?result=fail";
 
 		} else {
-			session.setAttribute("authMember", m);
+			session.setAttribute("authMember", m);			
 			return "redirect:/index";
 		}
 	}
@@ -60,18 +60,18 @@ public class MemberController {
 		m.addAttribute("m", vo);
 
 		return "member/uinfo";
-
-	}
-
+	}	
+	
 	@RequestMapping("/update")
-	public String update(@ModelAttribute MemberVo vo) {
-		System.out.println(vo);
+	public String update(@ModelAttribute MemberVo vo,HttpSession session) {
+		
 		memberSev.updateUser(vo);
-
+		session.setAttribute("authMember", vo);
+				
 		return "redirect:/index";
-
 	}
 
+	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("authMember");
