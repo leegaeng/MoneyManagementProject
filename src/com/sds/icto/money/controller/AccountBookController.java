@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,9 +36,9 @@ public class AccountBookController {
 
 		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
 		list = accountBookServ.listAccount(mid);
-		
+
 		m.addAttribute("list", list);
-		
+
 		return "accountbook/list";
 	}
 
@@ -57,6 +58,15 @@ public class AccountBookController {
 		manageServ.insertManagement(mid, vo);
 
 		return "accountbook/list";
+	}
+
+	@RequestMapping(value = "/accountview/{aid}", method = RequestMethod.GET)
+	public String accountview(@PathVariable int aid, Model m) {
+
+		AccountBookVo vo = accountBookServ.getAccount(aid);
+		m.addAttribute("a", vo);
+
+		return "accountbook/accountview";
 	}
 
 }

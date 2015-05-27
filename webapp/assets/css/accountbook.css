@@ -391,8 +391,9 @@ input[type="submit"]:hover {
 	display: inline-block;
 	vertical-align: top;
 	height: 200px;
-	width: 250px;
+	width: 200px;
 	margin: 10px;
+	overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {

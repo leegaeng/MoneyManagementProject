@@ -13,8 +13,8 @@
 	href="/MoneyManagementProject/assets/css/accountbook.css" />
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-	function insert() {
-		location.href = "/MoneyManagementProject/accountbook/insert";
+	function list() {
+		location.href = "/MoneyManagementProject/accountbook/list";
 	}
 </script>
 </head>
@@ -33,32 +33,43 @@
 		<div id="supportingText">
 			<div id="explanation" align="center">
 
-				<c:forEach items="${list}" var="a">
-					<ul class="surveys grid">
-						<li class="survey-item"><span class="survey-name">
-							<a href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a> </span> <span class="survey-total"> ${a.atotalmoney}</span>
 
-							<div class="pull-right">
-								<div style="background: ${a.acolor}"></div>
+				<h2>${a.atitle}</h2>
+				<table>
+					<tr>
+						<th>보유잔액</th>
+						<th>총 수입</th>
+						<th>총 지출</th>
+					</tr>
+					<tr>
+						<th>${a.atotalmoney}</th>
+						<th><c:if </th>
+						<th>총 지출</th>
+					</tr>
 
-								<span class="survey-progress"> <span
-									class="survey-progress-bg"> <span
-										class="survey-progress-fg" style="width: ${a.aincome}%;"></span>
-								</span> <span class="survey-progress-labels"> <span
-										class="survey-progress-label"> </span> <span
-										class="survey-completes"> 수입 대비 지출 : </span>
-								</span>
-								</span> <span class="survey-end-date ended"> </span> <span
-									class="survey-stage"> <span class="stage draft">Draft</span>
-									<span class="stage awarded"></span> <span class="stage live"></span>
-									<span class="stage ended active"
-									style="background: ${a.acolor}"></span>
-								</span>
-							</div></li>
-					</ul>
-				</c:forEach>
+				</table>
 
-				<input type="button" value="가계부 등록" onclick="insert()">
+
+				<li class="survey-item"><span class="survey-name"> <a
+						href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a>
+				</span> <span class="survey-total"> ${a.atotalmoney}</span>
+
+					<div class="pull-right">
+						<div style="background: ${a.acolor}"></div>
+
+						<span class="survey-progress"> <span
+							class="survey-progress-bg"> <span
+								class="survey-progress-fg" style="width: ${a.aincome}%;"></span>
+						</span> <span class="survey-progress-labels"> <span
+								class="survey-progress-label"> </span> <span
+								class="survey-completes"> 수입 대비 지출 : </span>
+						</span>
+						</span> <span class="survey-end-date ended"> </span> <span
+							class="survey-stage"> <span class="stage draft">Draft</span>
+							<span class="stage awarded"></span> <span class="stage live"></span>
+							<span class="stage ended active" style="background: ${a.acolor}"></span>
+						</span>
+					</div></li> <input type="button" value="목록으로" onclick="list()">
 
 				<div id="footer">
 					<jsp:include page="/WEB-INF/views/include/footer.jsp" />
