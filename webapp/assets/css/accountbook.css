@@ -546,3 +546,8 @@ input[type="submit"]:hover {
 	font-size: 20px;
 	line-height: 60px;
 }
+
+.survey-item:HOVER {
+	background-color: #eeeeee;
+	opacity:0.9;
+}

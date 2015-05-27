@@ -14,6 +14,16 @@
 	href="/MoneyManagementProject/assets/css/accountbook.css" />
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
+	$(function() {
+
+		$('.survey-item').click(function(index) {
+			var idx= "#"+$('.survey-item').index(this);
+			var aid = $(idx).val();
+			location.href = "/MoneyManagementProject/accountbook/accountview/"+aid;
+		});
+
+	});
+
 	function insert() {
 		location.href = "/MoneyManagementProject/accountbook/insert";
 	}
@@ -40,12 +50,13 @@
 		<div id="supportingText">
 			<div id="explanation" align="center">
 
+				<c:set var="index" value="0"></c:set>
 				<ul class="surveys grid">
 					<c:forEach items="${list}" var="a">
 						<li class="survey-item"
 							style="background-color: rgb(${a.acolor}, 0.4)"><span
-							class="survey-name"> <a
-								href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a>
+							class="survey-name"> <input type="hidden" id="${index}"
+								value="${a.aid}"> ${a.atitle}
 						</span> <span class="survey-total"> ${a.atotalmoney} </span>
 
 							<div class="pull-right">
@@ -63,10 +74,12 @@
 									style="background: ${a.acolor}"></span>
 								</span>
 							</div></li>
+						<c:set var="index" value="${index+1}"></c:set>
 					</c:forEach>
 				</ul>
 
-				<input type="button" style="margin-left:130px" value="가계부 등록" onclick="insert()">
+				<input type="button" style="margin-left: 130px" value="가계부 등록"
+					onclick="insert()">
 
 				<div id="footer">
 					<jsp:include page="/WEB-INF/views/include/footer.jsp" />
