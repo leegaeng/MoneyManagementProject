@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sds.icto.money.service.AccountBookService;
+import com.sds.icto.money.service.AccountDetailService;
 import com.sds.icto.money.service.ManagementService;
 import com.sds.icto.money.vo.AccountBookVo;
+import com.sds.icto.money.vo.AccountDetailVo;
 import com.sds.icto.money.vo.MemberVo;
 
 @Controller
@@ -27,6 +29,9 @@ public class AccountBookController {
 
 	@Autowired
 	ManagementService manageServ;
+
+	@Autowired
+	AccountDetailService accountdetailServ;
 
 	@RequestMapping("/list")
 	public String list(Model m, HttpSession session) {
@@ -65,6 +70,10 @@ public class AccountBookController {
 
 		AccountBookVo vo = accountBookServ.getAccount(aid);
 		m.addAttribute("a", vo);
+
+		List<AccountDetailVo> list = new ArrayList<AccountDetailVo>();
+		list = accountdetailServ.listDetail(aid);
+		m.addAttribute("list", list);
 
 		return "accountbook/accountview";
 	}

@@ -21,5 +21,6 @@
 	<sqlMap resource="/member.xml" />
 	<sqlMap resource="/accountbook.xml" />
 	<sqlMap resource="/management.xml" />
+	<sqlMap resource="/accountdetail.xml" />
 
 </sqlMapConfig>

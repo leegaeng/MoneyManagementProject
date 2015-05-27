@@ -14,7 +14,7 @@
 	<insert id="insert" parameterClass="AccountBookVo">
 		<selectKey keyProperty="aid" resultClass="java.lang.Integer">
 			<![CDATA[
-			select accountBook_seq.nextval as aid from dual
+			select accountbook_seq.nextval as aid from dual
 		]]>
 		</selectKey>
 		

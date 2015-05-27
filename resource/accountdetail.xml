@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="accountdetail">
+	<typeAlias alias="AccountDetailVo" type="com.sds.icto.money.vo.AccountDetailVo" />
+
+	<resultMap class="AccountDetailVo" id="accountdetailResultMap">
+		<result column="aid" property="aid" />
+		<result column="did" property="did" />
+		<result column="dtitle" property="dtitle" />
+		<result column="dcontent" property="dcontent" />
+		<result column="dincome" property="dincome" />
+		<result column="doutcome" property="doutcome" />
+		<result column="ddate" property="ddate" />
+		<result column="dmoney" property="dmoney" />
+	</resultMap>
+
+	<insert id="insert" parameterClass="AccountDetailVo">
+
+		<selectKey keyProperty="did" resultClass="java.lang.Integer">
+			<![CDATA[
+			select accountdetail_seq.nextval as did from dual
+		]]>
+		</selectKey>
+		<![CDATA[
+		insert into accountdetail
+		values (#aid#, #did#, #dtitle#, #dcontent#, #dincome#, #doutcome#, sysdate, #dmoney#)
+		]]>
+	</insert>
+	
+	<select id="list" parameterClass="java.lang.Integer" resultMap="accountdetailResultMap">
+		<![CDATA[
+		select * from accountdetail where aid=#value#]]>
+	</select>
+
+</sqlMap> 
