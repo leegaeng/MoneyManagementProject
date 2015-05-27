@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.sds.icto.money.vo.AccountBookVo;
 import com.sds.icto.money.vo.AccountDetailVo;
 
 @Repository
@@ -26,4 +27,11 @@ public class AccountDetailDao {
 		list = st.queryForList("accountdetail.list", aid);
 		return list;
 	}
+	
+	public AccountDetailVo get(int did) {
+		AccountDetailVo vo = new AccountDetailVo();
+		vo = (AccountDetailVo) st.queryForObject("accountdetail.get", did);
+		return vo;
+	}
+	
 }

@@ -62,7 +62,7 @@
 							<div class="pull-right">
 								<span class="survey-progress"> <span
 									class="survey-progress-bg"> <span
-										class="survey-progress-fg" style="width: ${a.aincome}%;"></span>
+										class="survey-progress-fg" style="width: ${ (a.aincome/a.aoutcome) * -1}%;"></span>
 								</span> <span class="survey-progress-labels"> <span
 										class="survey-progress-label"> </span> <span
 										class="survey-completes"> 수입 대비 지출 : </span>
