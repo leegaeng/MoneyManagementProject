@@ -5,57 +5,60 @@ import java.util.Date;
 public class AccountDetailVo {
 	
 	private int aid;
-	private String atitle;
-	private String acontent;
-	private int aincome;
-	private int aoutcome;
-	private Date adate;
-	private int amoney;
-	
-	
+	private int did;
+	private String dtitle;
+	private String dcontent;
+	private int dincome;
+	private int doutcome;
+	private Date ddate;
+	private int dmoney;
 	public int getAid() {
 		return aid;
 	}
 	public void setAid(int aid) {
 		this.aid = aid;
 	}
-	public String getAtitle() {
-		return atitle;
+	public int getDid() {
+		return did;
 	}
-	public void setAtitle(String atitle) {
-		this.atitle = atitle;
+	public void setDid(int did) {
+		this.did = did;
 	}
-	public String getAcontent() {
-		return acontent;
+	public String getDtitle() {
+		return dtitle;
 	}
-	public void setAcontent(String acontent) {
-		this.acontent = acontent;
+	public void setDtitle(String dtitle) {
+		this.dtitle = dtitle;
 	}
-	public int getAincome() {
-		return aincome;
+	public String getDcontent() {
+		return dcontent;
 	}
-	public void setAincome(int aincome) {
-		this.aincome = aincome;
+	public void setDcontent(String dcontent) {
+		this.dcontent = dcontent;
 	}
-	public int getAoutcome() {
-		return aoutcome;
+	public int getDincome() {
+		return dincome;
 	}
-	public void setAoutcome(int aoutcome) {
-		this.aoutcome = aoutcome;
+	public void setDincome(int dincome) {
+		this.dincome = dincome;
 	}
-	public Date getAdate() {
-		return adate;
+	public int getDoutcome() {
+		return doutcome;
 	}
-	public void setAdate(Date adate) {
-		this.adate = adate;
+	public void setDoutcome(int doutcome) {
+		this.doutcome = doutcome;
 	}
-	public int getAmoney() {
-		return amoney;
+	public Date getDdate() {
+		return ddate;
 	}
-	public void setAmoney(int amoney) {
-		this.amoney = amoney;
+	public void setDdate(Date ddate) {
+		this.ddate = ddate;
 	}
-	
-	
+	public int getDmoney() {
+		return dmoney;
+	}
+	public void setDmoney(int dmoney) {
+		this.dmoney = dmoney;
+	}	
 	
 }
