@@ -7,6 +7,13 @@
 	box-sizing: border-box;
 }
 
+#insert-form {
+	margin-top:-50px;
+	width: 350px;
+	padding: 40px 30px;
+	border-radius: 5px;
+}
+
 input[type="submit"],input[type="button"] {
 	font-family: mainFont;
 	height: 30px;
@@ -15,12 +22,47 @@ input[type="submit"],input[type="button"] {
 	color: #ecf0f1;
 	font-weight: 100;
 	margin-top: 15px;
-	margin-left: 160px; margin-bottom : 15px;
+	margin-bottom: 15px;
 	width: 300px;
 	border-radius: 5px;
 	transition: all ease-in-out .2s;
 	border-bottom: 3px solid #2980b9;
 	margin-bottom: 15px;
+}
+
+input {
+	width: 100%;
+	background: #bdc3c7;
+	border: none;
+	height: 30px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 14px;
+	color: #7f8c8d;
+}
+
+input:focus {
+	outline: none;
+}
+
+
+
+td {
+	padding: 5px;
+}
+
+td:FIRST-CHILD {
+	width: 200px;
+	text-align: center;
+}
+
+td:last-child {
+	width: 300px;
+}
+
+td input[type="text"] {
+	margin-bottom: 3px;
 }
 
 input[type="submit"] {
@@ -55,7 +97,8 @@ input[type="submit"]:hover {
 }
 
 .surveys {
-	border-radius: 10px; width : 600px;
+	border-radius: 10px;
+	width: 600px;
 	background: #ecf0f1;
 	list-style: none;
 	margin: 0;
@@ -95,7 +138,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -105,7 +154,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -119,12 +174,24 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
+	
+	
+	
 	:not
 	
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -135,7 +202,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -151,7 +224,16 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
+	
+	
+	
 	:
+	
+	
+	
 	
 	
 	
@@ -161,7 +243,16 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	none
+	
+	
+	
+	
+	
+	
 	
 	
 	

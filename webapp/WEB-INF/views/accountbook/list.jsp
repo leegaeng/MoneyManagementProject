@@ -14,17 +14,9 @@
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-	(function() {
-		$(function() {
-			return $('[data-toggle]').on('click', function() {
-				var toggle;
-				toggle = $(this).addClass('active').attr('data-toggle');
-				$(this).siblings('[data-toggle]').removeClass('active');
-				return $('.surveys').removeClass('grid list').addClass(toggle);
-			});
-		});
-
-	}).call(this);
+	function insert() {
+		location.href = "/MoneyManagementProject/accountbook/insert";
+	}
 </script>
 </head>
 <body>
@@ -43,61 +35,55 @@
 			<div id="explanation" align="center">
 
 
-				<ul class="surveys grid">
-					<li class="survey-item"><span class="survey-country list-only">
-							UK </span> <span class="survey-name"> UK Beer May 2014 </span> <span
-						class="survey-country grid-only"> UK </span>
+				<li class="survey-item"><span class="survey-country list-only">
+						UK </span> <span class="survey-name"> UK Beer May 2014 </span> <span
+					class="survey-country grid-only"> UK </span>
 
-						<div class="pull-right">
+					<div class="pull-right">
 
-							<span class="survey-progress"> <span
-								class="survey-progress-bg"> <span
-									class="survey-progress-fg" style="width: 88%;"></span>
-							</span> <span class="survey-progress-labels"> <span
-									class="survey-progress-label"> 88% </span> <span
-									class="survey-completes"> 490 / 500 </span>
-							</span>
-							</span> <span class="survey-end-date ended"> 2014 - May 10 </span> <span
-								class="survey-stage"> <span class="stage draft">Draft</span>
-								<span class="stage awarded">Awarded</span> <span
-								class="stage live">Live</span> <span class="stage ended active">Ended</span>
-							</span>
-						</div></li>
-					<li class="survey-item"><span class="survey-country list-only">
-							US </span> <span class="survey-name"> Pepsi Tracker New Orleans </span>
+						<span class="survey-progress"> <span
+							class="survey-progress-bg"> <span
+								class="survey-progress-fg" style="width: 88%;"></span>
+						</span> <span class="survey-progress-labels"> <span
+								class="survey-progress-label"> 88% </span> <span
+								class="survey-completes"> 490 / 500 </span>
+						</span>
+						</span> <span class="survey-end-date ended"> 2014 - May 10 </span> <span
+							class="survey-stage"> <span class="stage draft">Draft</span>
+							<span class="stage awarded">Awarded</span> <span
+							class="stage live">Live</span> <span class="stage ended active">Ended</span>
+						</span>
+					</div></li>
+				<li class="survey-item"><span class="survey-country list-only">
+						US </span> <span class="survey-name"> Pepsi Tracker New Orleans </span> <span
+					class="survey-country grid-only"> US </span>
 
-						<span class="survey-country grid-only"> US </span>
+					<div class="pull-right">
 
-						<div class="pull-right">
+						<span class="survey-progress"> <span
+							class="survey-progress-bg"> <span
+								class="survey-progress-fg" style="width: 25%;"></span>
+						</span> <span class="survey-progress-labels"> <span
+								class="survey-progress-label"> 25% </span> <span
+								class="survey-completes"> 150 / 500 </span>
+						</span>
+						</span> <span class="survey-end-date"> 2014 - July 12 </span> <span
+							class="survey-stage"> <span class="stage draft">Draft</span>
+							<span class="stage awarded">Awarded</span> <span
+							class="stage live active">Live</span> <span class="stage ended">Ended</span>
+						</span>
+					</div></li>
+				<li class="survey-item"><span class="survey-country list-only">
+						US </span> <span class="survey-name"> Global Music Brand Tracker </span>
+					<span class="survey-country grid-only"> US </span>
 
-							<span class="survey-progress"> <span
-								class="survey-progress-bg"> <span
-									class="survey-progress-fg" style="width: 25%;"></span>
-							</span> <span class="survey-progress-labels"> <span
-									class="survey-progress-label"> 25% </span> <span
-									class="survey-completes"> 150 / 500 </span>
-							</span>
-							</span> <span class="survey-end-date"> 2014 - July 12 </span> <span
-								class="survey-stage"> <span class="stage draft">Draft</span>
-								<span class="stage awarded">Awarded</span> <span
-								class="stage live active">Live</span> <span class="stage ended">Ended</span>
-							</span>
-						</div></li>
-					<li class="survey-item"><span class="survey-country list-only">
-							US </span> <span class="survey-name"> Global Music Brand Tracker
-					</span> <span class="survey-country grid-only"> US </span>
-
-						<div class="pull-right">
-							<span class="survey-end-date"> 2014 - Oct 1 </span> <span
-								class="survey-stage"> <span class="stage draft">Draft</span>
-								<span class="stage awarded active">Awarded</span> <span
-								class="stage live">Live</span> <span class="stage ended">Ended</span>
-							</span>
-						</div></li>
-				</ul>
-
-
-				<input type="button" value="가계부 등록" onclick="insert()">
+					<div class="pull-right">
+						<span class="survey-end-date"> 2014 - Oct 1 </span> <span
+							class="survey-stage"> <span class="stage draft">Draft</span>
+							<span class="stage awarded active">Awarded</span> <span
+							class="stage live">Live</span> <span class="stage ended">Ended</span>
+						</span>
+					</div></li> <input type="button" value="가계부 등록" onclick="insert()">
 
 
 			</div>
