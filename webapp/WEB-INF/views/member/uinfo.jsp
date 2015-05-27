@@ -9,7 +9,8 @@
 <title>내 돈을 부탁해</title>
 <link rel="stylesheet" type="text/css" media="screen"
 	href="/MoneyManagementProject/assets/css/main.css" />
-
+<link rel="stylesheet" type="text/css" media="screen"
+	href="/MoneyManagementProject/assets/css/login.css" />
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -28,24 +29,30 @@
 		<div id="supportingText">
 			<div id="explanation" align="center">
 				<img src="/MoneyManagementProject/assets/images/intro.jpg"
-					width="100px">
-
-				<div id="content">
-					<div id="user">
-						<form id="uinfo-form" name="uinfoForm" method="post"
-							action="/MoneyManagementProject/member/update">
-							<input type="hidden" name="mid" value="${m.mid}">
-							 <label	class="block-label" for="mname">이름</label> <input id="mname"
-								name="mname" type="text" value="${m.mname}"><br><br> <label class="block-label">패스워드</label>
-							<input name="mpassword" type="password" value="${m.mpassword}">
-						<br><br>
-							<input type="submit" value="수정하기">
-
-						</form>
-					</div>
-				</div>
+					width="100px" id="logo">
 
 
+				<form id="join-form" name="uinfoForm" method="post"
+					action="/MoneyManagementProject/member/update">
+					<h2>회원정보수정</h2>
+
+					<table>		
+					<input type="hidden" name="mid" value="${m.mid}">				
+						<tr>
+							<td>이름</td>
+							<td><input id="mname" name="mname" type="text" value="${m.mname}"
+								placeholder="name"></td>
+						</tr>
+						<tr>
+							<td>패스워드</td>
+							<td><input name="mpassword" type="password" value="${m.mpassword}"
+								placeholder="password"></td>
+						</tr>
+						<tr>
+							<td colspan="2"><input type="submit" value="수정하기"></td>
+						</tr>
+					</table>
+				</form>
 
 			</div>
 
