@@ -22,7 +22,7 @@ public class AccountBookController {
 	AccountBookService accountBookServ;
 
 	@Autowired
-	ManagementService managementServ;
+	ManagementService manageServ;
 
 	@RequestMapping("/list")
 	public String list(Model m) {
@@ -41,10 +41,11 @@ public class AccountBookController {
 
 		MemberVo member = (MemberVo) session.getAttribute("authMember");
 		String mid = member.getMid();
-		accountBookServ.insertAccount(vo);
-		managementServ.insertManagement(mid, vo);
+		int aid = accountBookServ.insertAccount(vo);
+		vo = accountBookServ.getAccount(aid);
+		manageServ.insertManagement(mid, vo);
 
-		return "accountbook/insertform";
+		return "accountbook/list";
 	}
 
 }

@@ -3,7 +3,7 @@ package com.sds.icto.money.vo;
 public class AccountBookVo {
 	private int aid;
 	private String atitle;
-	private int atotalMoney;
+	private int atotalmoney;
 	private int aincome;
 	private int aoutcome;
 	private String acolor;
@@ -11,11 +11,11 @@ public class AccountBookVo {
 	public AccountBookVo() {
 	}
 
-	public AccountBookVo(int aid, String atitle, int atotalMoney, int aincome,
+	public AccountBookVo(int aid, String atitle, int atotalmoney, int aincome,
 			int aoutcome, String acolor) {
 		this.aid = aid;
 		this.atitle = atitle;
-		this.atotalMoney = atotalMoney;
+		this.atotalmoney = atotalmoney;
 		this.aincome = aincome;
 		this.aoutcome = aoutcome;
 		this.acolor = acolor;
@@ -37,12 +37,12 @@ public class AccountBookVo {
 		this.atitle = atitle;
 	}
 
-	public int getAtotalMoney() {
-		return atotalMoney;
+	public int getAtotalmoney() {
+		return atotalmoney;
 	}
 
-	public void setAtotalMoney(int atotalMoney) {
-		this.atotalMoney = atotalMoney;
+	public void setAtotalmoney(int atotalmoney) {
+		this.atotalmoney = atotalmoney;
 	}
 
 	public int getAincome() {
@@ -72,7 +72,7 @@ public class AccountBookVo {
 	@Override
 	public String toString() {
 		return "AccountBookVo [aid=" + aid + ", atitle=" + atitle
-				+ ", atotalMoney=" + atotalMoney + ", aincome=" + aincome
+				+ ", atotalMoney=" + atotalmoney + ", aincome=" + aincome
 				+ ", aoutcome=" + aoutcome + ", acolor=" + acolor + "]";
 	}
 

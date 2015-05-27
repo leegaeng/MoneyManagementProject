@@ -22,7 +22,7 @@ public class ManagementDao {
 		map.put("aid", vo.getAid());
 		map.put("atitle", vo.getAtitle());
 	
-		st.insert("managemnet.insert", map);
+		st.insert("management.insert", map);
 	}
 
 

@@ -4,11 +4,9 @@
 	<typeAlias alias="ManagementVo" type="com.sds.icto.money.vo.ManagementVo" />
 
 	<resultMap class="ManagementVo" id="managementMap">
+		<result column="mid" property="mid" />
 		<result column="aid" property="aid" />
 		<result column="atitle" property="atitle" />
-		<result column="atotalmoney" property="atotalmoney" />
-		<result column="aincome" property="aincome" />
-		<result column="aoutcome" property="aoutcome" />
 	</resultMap>
 
 	<insert id="insert" parameterClass="map">

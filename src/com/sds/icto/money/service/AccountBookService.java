@@ -17,10 +17,16 @@ public class AccountBookService {
 	@Autowired
 	AccountBookDao accountbookDao;
 
-	public void insertAccount(AccountBookVo vo) {
+	public int insertAccount(AccountBookVo vo) {
+		int aid = 0;
+		aid = accountbookDao.insert(vo);
 
-		accountbookDao.insert(vo);
+		return aid;
+	}
 
+	public AccountBookVo getAccount(int aid) {
+		AccountBookVo vo = accountbookDao.get(aid);
+		return vo;
 	}
 
 	public List<AccountBookVo> listAccount() {

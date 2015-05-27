@@ -12,15 +12,26 @@
 	</resultMap>
 
 	<insert id="insert" parameterClass="AccountBookVo">
+		<selectKey keyProperty="aid" resultClass="java.lang.Integer">
+			<![CDATA[
+			select accountBook_seq.nextval as aid from dual
+		]]>
+		</selectKey>
+		
 		<![CDATA[
 		insert into accountbook 
-		values (accountBook_SEQ_nextval,#atitle#,#atotalmoney#, #aincome#, #aoutcome#)
+		values (#aid#,#atitle#,#atotalmoney#, 0, 0, #acolor#)
 		]]>
 	</insert>
 
 	<select id="list" resultMap="accountbookResultMap">
 		<![CDATA[
 		select * from accountbook	]]>
+	</select>
+
+	<select id="get" parameterClass="java.lang.Integer" resultMap="accountbookResultMap">
+		<![CDATA[
+		select * from accountbook where aid=#value#]]>
 	</select>
 
 </sqlMap> 

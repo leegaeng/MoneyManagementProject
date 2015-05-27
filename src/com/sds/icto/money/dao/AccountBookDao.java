@@ -15,8 +15,20 @@ public class AccountBookDao {
 	@Autowired
 	SqlMapClientTemplate st;
 
-	public void insert(AccountBookVo vo) {
-		st.insert("accountbook.insert", vo);
+	public int insert(AccountBookVo vo) {
+		
+		int aid = 0;
+
+		aid = (int) st.insert("accountbook.insert", vo);
+
+		return aid;
+
+	}
+
+	public AccountBookVo get(int aid) {
+		AccountBookVo vo = (AccountBookVo) st.queryForObject("accountbook.get",
+				aid);
+		return vo;
 	}
 
 	public List<AccountBookVo> list() {
