@@ -41,8 +41,9 @@
 
 				<c:forEach items="${list}" var="a">
 					<ul class= "surveys grid">
-						<li class="survey-item"><span class="survey-name">
-							<a href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a> </span> <span class="survey-total"> ${a.atotalmoney}</span>
+						<li class="survey-item"><span class="survey-name"> <a
+								href="/MoneyManagementProject/accountbook/accountview/${a.aid}">${a.atitle}</a>
+						</span> <span class="survey-total"> ${a.atotalmoney}</span>
 
 							<div class="pull-right">
 								<div style="background: ${a.acolor}"></div>
