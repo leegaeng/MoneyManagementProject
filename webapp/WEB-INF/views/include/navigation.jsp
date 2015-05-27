@@ -3,7 +3,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
+<script type="text/javascript">
+	$(function() {
+		$("#checkLogin").click(function() {
+			alert("로그인 후 이용가능합니다");
+		});
+	});
+</script>
 </head>
 <ul>
 	<%-- <input type="hidden" value="${authMember.name}" id="name">
@@ -39,7 +45,7 @@
 				</c:when>
 				<c:when test="${empty authMember}">
 					<li><a href="/MoneyManagementProject/member/login">Login</a></li>
-					<li><a href="/MoneyManagementProject/member/login">AccountBook</a></li>
+					<li id= "checkLogin"><a href="/MoneyManagementProject/member/login">AccountBook</a></li>
 					<li><a href="/MoneyManagementProject/member/login">MyInfo</a></li>
 				</c:when>
 			</c:choose>
