@@ -5,11 +5,6 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 </head>
-
-
-
-
-
 <ul>
 	<%-- <input type="hidden" value="${authMember.name}" id="name">
 	<c:choose>
@@ -44,11 +39,11 @@
 				</c:when>
 				<c:when test="${empty authMember}">
 					<li><a href="/MoneyManagementProject/member/login">Login</a></li>
-					<li><a href="/MoneyManagementProject/accountbook/list">AccountBook</a></li>
+					<li><a href="/MoneyManagementProject/member/login">AccountBook</a></li>
 					<li><a href="/MoneyManagementProject/member/login">MyInfo</a></li>
 				</c:when>
-			</c:choose>						
-			
+			</c:choose>
+
 			<li><a href="">Contacts</a></li>
 		</ul>
 	</div>

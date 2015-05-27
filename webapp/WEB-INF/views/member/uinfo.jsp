@@ -14,7 +14,14 @@
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
+<script type="text/javascript">
+	$(function() {
 
+		$("#modifyUinfo").click(function() {
+			alert("회원정보가 수정되었습니다.");
+		});
+	});
+</script>
 
 </head>
 <body>
@@ -36,20 +43,21 @@
 					action="/MoneyManagementProject/member/update">
 					<h2>회원정보수정</h2>
 
-					<table>		
-					<input type="hidden" name="mid" value="${m.mid}">				
+					<table>
+						<input type="hidden" name="mid" value="${m.mid}">
 						<tr>
 							<td>이름</td>
-							<td><input id="mname" name="mname" type="text" value="${m.mname}"
-								placeholder="name"></td>
+							<td><input id="mname" name="mname" type="text"
+								value="${m.mname}" placeholder="name"></td>
 						</tr>
 						<tr>
 							<td>패스워드</td>
-							<td><input name="mpassword" type="password" value="${m.mpassword}"
-								placeholder="password"></td>
+							<td><input name="mpassword" type="password"
+								value="${m.mpassword}" placeholder="password"></td>
 						</tr>
 						<tr>
-							<td colspan="2"><input type="submit" value="수정하기"></td>
+							<td colspan="2"><input id="modifyUinfo" type="submit"
+								value="수정하기"></td>
 						</tr>
 					</table>
 				</form>
