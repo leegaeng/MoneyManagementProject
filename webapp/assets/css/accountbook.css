@@ -8,7 +8,7 @@
 }
 
 #insert-form {
-	margin-top:-50px;
+	margin-top: -50px;
 	width: 350px;
 	padding: 40px 30px;
 	border-radius: 5px;
@@ -45,8 +45,6 @@ input {
 input:focus {
 	outline: none;
 }
-
-
 
 td {
 	padding: 5px;
@@ -115,7 +113,7 @@ input[type="submit"]:hover {
 	box-shadow: 0 2px 1px rgba(170, 170, 170, 0.25);
 }
 
-.survey-name {
+.survey-total {
 	font-weight: 400;
 }
 
@@ -141,7 +139,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -157,7 +161,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -180,6 +190,12 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
+	
+	
+	
 	:not
 	
 	
@@ -188,7 +204,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -205,7 +227,13 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	 
+	
+	
+	
 	
 	
 	
@@ -230,7 +258,16 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
+	
+	
+	
 	:
+	
+	
+	
 	
 	
 	
@@ -246,7 +283,16 @@ input[type="submit"]:hover {
 	
 	
 	
+	
+	
+	
 	none
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -361,7 +407,8 @@ input[type="submit"]:hover {
 .grid .survey-name {
 	display: block;
 	max-width: 80%;
-	font-size: 16px;
+	font-weight: 600;
+	font-size: 22px;
 	line-height: 20px;
 }
 
@@ -447,8 +494,8 @@ input[type="submit"]:hover {
 }
 
 .grid .survey-end-date {
-	font-size: 12px;
 	line-height: 20px;
+	font-size: 0px;
 }
 
 .survey-progress-label {
@@ -476,4 +523,9 @@ input[type="submit"]:hover {
 	left: 0;
 	margin: 0;
 	background: #8DC63F;
+}
+
+.grid .survey-total {
+	font-size: 20px;
+	line-height: 60px;
 }

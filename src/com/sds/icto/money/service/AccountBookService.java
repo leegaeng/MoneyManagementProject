@@ -29,9 +29,9 @@ public class AccountBookService {
 		return vo;
 	}
 
-	public List<AccountBookVo> listAccount() {
+	public List<AccountBookVo> listAccount(String mid) {
 		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
-		list = accountbookDao.list();
+		list = accountbookDao.list(mid);
 		return list;
 	}
 

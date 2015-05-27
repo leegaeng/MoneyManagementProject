@@ -24,9 +24,9 @@
 		]]>
 	</insert>
 
-	<select id="list" resultMap="accountbookResultMap">
+	<select id="list" parameterClass="java.lang.String" resultMap="accountbookResultMap">
 		<![CDATA[
-		select * from accountbook	]]>
+		select * from accountbook a, management m where m.mid=#value# and m.aid=a.aid]]>
 	</select>
 
 	<select id="get" parameterClass="java.lang.Integer" resultMap="accountbookResultMap">

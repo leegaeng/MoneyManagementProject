@@ -1,5 +1,8 @@
 package com.sds.icto.money.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +28,16 @@ public class AccountBookController {
 	ManagementService manageServ;
 
 	@RequestMapping("/list")
-	public String list(Model m) {
+	public String list(Model m, HttpSession session) {
 
+		MemberVo member = (MemberVo) session.getAttribute("authMember");
+		String mid = member.getMid();
+
+		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
+		list = accountBookServ.listAccount(mid);
+		
+		m.addAttribute("list", list);
+		
 		return "accountbook/list";
 	}
 

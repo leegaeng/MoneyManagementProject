@@ -31,9 +31,9 @@ public class AccountBookDao {
 		return vo;
 	}
 
-	public List<AccountBookVo> list() {
+	public List<AccountBookVo> list(String mid) {
 		List<AccountBookVo> list = new ArrayList<AccountBookVo>();
-		list = st.queryForList("accountbook.list");
+		list = st.queryForList("accountbook.list", mid);
 		return list;
 	}
 }
