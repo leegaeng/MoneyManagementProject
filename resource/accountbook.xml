@@ -9,6 +9,7 @@
 		<result column="atotalmoney" property="atotalmoney" />
 		<result column="aincome" property="aincome" />
 		<result column="aoutcome" property="aoutcome" />
+		<result column="acolor" property="acolor" />
 	</resultMap>
 
 	<insert id="insert" parameterClass="AccountBookVo">
