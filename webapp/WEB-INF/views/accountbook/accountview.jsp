@@ -22,7 +22,7 @@
 						function() {
 							$
 									.ajax({
-										url : "/MoneyManagementProject/member/searchId/",
+										url : "/MoneyManagementProject/member/searchId",
 										type : "post",
 										dataType : "json",
 										data: {
@@ -35,9 +35,10 @@
 																response.mid
 																		+ " "
 																		+ response.mname
-																		+ " <input type='button' style='width:50px' value='등록' onclick='insertmanagement("
+																		+ " <input type='button' style='width:50px' value='등록'"
+																		+" onclick=insertmanagement('"
 																		+ response.mid
-																		+ ")'>");
+																		+ "')>");
 											} else {
 												$(".resultId").html(
 														"해당 사용자가 없습니다.");
@@ -63,7 +64,6 @@
 		}
 	}
 	function insertmanagement(mid) {
-
 		$.ajax({
 			url : "/MoneyManagementProject/accountbook/management",
 			type : "post",
@@ -73,6 +73,7 @@
 			},
 			dataType : "json",
 			success : function(response) {
+				console.log(response);
 				alert("성공적으로 등록되었습니다.");
 			},
 			error : function(jqXHR, status, e) {

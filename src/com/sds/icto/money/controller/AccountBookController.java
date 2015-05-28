@@ -88,13 +88,11 @@ public class AccountBookController {
 
 	@RequestMapping(value = "/management", method = RequestMethod.POST)
 	@ResponseBody
-	public String management(@RequestParam String mid, @RequestParam int aid) {
-
+	public void management(@RequestParam String mid, @RequestParam int aid) {
+		System.out.println(mid+" "+aid);
 		AccountBookVo vo = accountBookServ.getAccount(aid);
 		manageServ.insertManagement(mid, vo);
-		String result = "success";
 		
-		return result;
 	}
 
 }
