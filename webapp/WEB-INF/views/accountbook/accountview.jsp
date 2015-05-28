@@ -22,14 +22,13 @@
 						function() {
 							$
 									.ajax({
-										url : "/MoneyManagementProject/member/searchId/"
-												+ $("#input-search").val(),
-										type : "get",
+										url : "/MoneyManagementProject/member/searchId/",
+										type : "post",
 										dataType : "json",
-										//	data : "",
-										//			    contentType: "application/json",
+										data: {
+											"mid": $("#input-search").val()
+										},
 										success : function(response) {
-											console.log(response);
 											if (response != null) {
 												$(".resultId")
 														.html(
@@ -66,12 +65,15 @@
 	function insertmanagement(mid) {
 
 		$.ajax({
-			url : "/MoneyManagementProject/accountbook/management/" + mid + "/"
-					+ $("#aid").val(),
-			type : "get",
+			url : "/MoneyManagementProject/accountbook/management",
+			type : "post",
+			data: {
+				"mid" : mid,
+				"aid" : $("#aid").val()
+			},
 			dataType : "json",
 			success : function(response) {
-				alert("성공적으로 등록되었습니다");
+				alert("성공적으로 등록되었습니다.");
 			},
 			error : function(jqXHR, status, e) {
 				console.error(status + " : " + e);

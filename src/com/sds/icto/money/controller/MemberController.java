@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sds.icto.money.service.MemberService;
 import com.sds.icto.money.vo.MemberVo;
-
 
 @Controller
 @RequestMapping("/member")
@@ -25,7 +25,7 @@ public class MemberController {
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String joinForm() {
 		return "member/joinform";
-		
+
 	}
 
 	@RequestMapping(value = "/join", method = RequestMethod.POST)
@@ -44,10 +44,10 @@ public class MemberController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute MemberVo vo, HttpSession session) {
 		MemberVo m = memberSev.authUser(vo);
-		if (m == null) {		
+		if (m == null) {
 			return "redirect:/member/login?result=fail";
 		} else {
-			session.setAttribute("authMember", m);			
+			session.setAttribute("authMember", m);
 			return "redirect:/index";
 		}
 	}
@@ -59,18 +59,17 @@ public class MemberController {
 		m.addAttribute("m", vo);
 
 		return "member/uinfo";
-	}	
-	
+	}
+
 	@RequestMapping("/update")
-	public String update(@ModelAttribute MemberVo vo,HttpSession session) {
-		
+	public String update(@ModelAttribute MemberVo vo, HttpSession session) {
+
 		memberSev.updateUser(vo);
 		session.setAttribute("authMember", vo);
-				
+
 		return "redirect:/index";
 	}
 
-	
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("authMember");
@@ -95,17 +94,16 @@ public class MemberController {
 
 		return result;
 	}
-	@RequestMapping(value = "/searchId/{mid}", method = RequestMethod.GET)
-	@ResponseBody
-	public MemberVo searchId(@PathVariable("mid") String mid) {
 
-		
+	@RequestMapping(value = "/searchId", method = RequestMethod.POST)
+	@ResponseBody
+	public MemberVo searchId(@RequestParam String mid) {
+
 		MemberVo vo = new MemberVo();
 		vo.setMid(mid);
 
-		vo = memberSev.authUser(vo);	
+		vo = memberSev.authUser(vo);
 
-		
 		return vo;
 	}
 }
