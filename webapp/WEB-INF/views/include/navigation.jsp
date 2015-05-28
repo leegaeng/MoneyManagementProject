@@ -56,12 +56,5 @@
 		</ul>
 	</div>
 
-	<div id="larchives">
-		<ul>
-			<li><a href="">Lorem Ipsum</a></li>
-			<li><a href="">Lorem Ipsum</a></li>
-			<li><a href="">Lorem Ipsum</a></li>
-			<li><a href="">Lorem Ipsum</a></li>
-		</ul>
-	</div>
+
 </ul>

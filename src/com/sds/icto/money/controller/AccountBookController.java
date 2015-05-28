@@ -1,7 +1,9 @@
 package com.sds.icto.money.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -88,11 +90,18 @@ public class AccountBookController {
 
 	@RequestMapping(value = "/management", method = RequestMethod.POST)
 	@ResponseBody
-	public void management(@RequestParam String mid, @RequestParam int aid) {
+	public Map management(@RequestParam String mid, @RequestParam int aid) {
 		System.out.println(mid+" "+aid);
 		AccountBookVo vo = accountBookServ.getAccount(aid);
-		manageServ.insertManagement(mid, vo);
 		
+		manageServ.insertManagement(mid, vo);
+
+		//"{ result:'success' }"
+		//"{ result:'fail', message:'.....'}"
+		Map map = new HashMap();
+		map.put( "result", "success" );
+		
+		return map;
 	}
 
 }

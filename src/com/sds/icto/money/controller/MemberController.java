@@ -1,5 +1,8 @@
 package com.sds.icto.money.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,13 +100,19 @@ public class MemberController {
 
 	@RequestMapping(value = "/searchId", method = RequestMethod.POST)
 	@ResponseBody
-	public MemberVo searchId(@RequestParam String mid) {
+	public Map searchId(@RequestParam String mid) {
 
 		MemberVo vo = new MemberVo();
 		vo.setMid(mid);
-
 		vo = memberSev.authUser(vo);
 
-		return vo;
+		//
+		//  { "user" : {  ..... }   }
+		//  { "user" : null }
+		//
+		Map map = new HashMap();
+		map.put( "user", vo );
+		
+		return map;
 	}
 }

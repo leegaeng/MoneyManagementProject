@@ -29,15 +29,17 @@
 											"mid": $("#input-search").val()
 										},
 										success : function(response) {
-											if (response != null) {
+											if (response.user != null) {
+												console.log( response.user );
+												
 												$(".resultId")
 														.html(
-																response.mid
+																response.user.mid
 																		+ " "
-																		+ response.mname
+																		+ response.user.mname
 																		+ " <input type='button' style='width:50px' value='등록'"
 																		+" onclick=insertmanagement('"
-																		+ response.mid
+																		+ response.user.mid
 																		+ "')>");
 											} else {
 												$(".resultId").html(
@@ -74,7 +76,9 @@
 			dataType : "json",
 			success : function(response) {
 				console.log(response);
-				alert("성공적으로 등록되었습니다.");
+				if( response.result == "success" ) {
+					alert("성공적으로 등록되었습니다.");
+				}
 			},
 			error : function(jqXHR, status, e) {
 				console.error(status + " : " + e);
