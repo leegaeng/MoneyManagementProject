@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sds.icto.money.service.AccountBookService;
 import com.sds.icto.money.service.AccountDetailService;
@@ -82,6 +83,17 @@ public class AccountBookController {
 		m.addAttribute("list", list);
 
 		return "accountbook/accountview";
+	}
+
+	@RequestMapping(value = "/management/{mid}/{aid}", method = RequestMethod.GET)
+	@ResponseBody
+	public String management(@PathVariable String mid, @PathVariable int aid) {
+
+		AccountBookVo vo = accountBookServ.getAccount(aid);
+		manageServ.insertManagement(mid, vo);
+		String result = "성공적으로 등록되었습니다.";
+
+		return result;
 	}
 
 }

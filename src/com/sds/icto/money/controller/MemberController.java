@@ -103,9 +103,9 @@ public class MemberController {
 		MemberVo vo = new MemberVo();
 		vo.setMid(mid);
 
-		vo = memberSev.authUser(vo);
-	
+		vo = memberSev.authUser(vo);	
 
+		
 		return vo;
 	}
 }

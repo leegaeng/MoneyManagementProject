@@ -16,28 +16,42 @@
 <script type="text/javascript">
 	$(function() {
 		$(".accountdetails").css("display", "none");
-	
-		
-		$("#input-search").keydown(function() {
-			$.ajax({
-				url : "/MoneyManagementProject/member/searchId/" + $("#input-search").val(),
-				type : "get",
-				dataType : "json",
-				//	data : "",
-				//			    contentType: "application/json",
-				success : function(response) {
-					console.log(response);
-					
-					$(".resultId").html(response.mid+" "+response.mname+" <input type='button' value='추가'>");
-					
-				},
-				error : function(jqXHR, status, e) {
-					console.error(status + " : " + e);
-				}
 
-			});
+		$("#input-search")
+				.keydown(
+						function() {
+							$
+									.ajax({
+										url : "/MoneyManagementProject/member/searchId/"
+												+ $("#input-search").val(),
+										type : "get",
+										dataType : "json",
+										//	data : "",
+										//			    contentType: "application/json",
+										success : function(response) {
+											console.log(response);
+											if (response != null) {
+												$(".resultId")
+														.html(
+																response.mid
+																		+ " "
+																		+ response.mname
+																		+ " <input type='button' style='width:50px' value='등록' onclick='insertmanagement("
+																		+ response.mid
+																		+ ")'>");
+											} else {
+												$(".resultId").html(
+														"해당 사용자가 없습니다.");
 
-		});
+											}
+										},
+										error : function(jqXHR, status, e) {
+											console.error(status + " : " + e);
+										}
+
+									});
+
+						});
 	});
 	function list() {
 		location.href = "/MoneyManagementProject/accountbook/list";
@@ -49,7 +63,22 @@
 			$(".accountdetails").css("display", "block");
 		}
 	}
-	function insertmanagement() {
+	function insertmanagement(mid) {
+
+		$.ajax({
+			url : "/MoneyManagementProject/accountbook/management/" + mid + "/"
+					+ $("#aid").val(),
+			type : "get",
+			dataType : "json",
+			success : function(response) {
+				alert("성공적으로 등록되었습니다");
+			},
+			error : function(jqXHR, status, e) {
+				console.error(status + " : " + e);
+			}
+
+		});
+
 	}
 </script>
 </head>
@@ -89,14 +118,18 @@
 					</tr>
 
 				</table>
-			
+
+				<div class="search">
 					<div class="field">
 
 						<input type="text" class="input-search" id="input-search"
 							name="input-search" required> <label for="input-search">친구
-							등록</label><div class="resultId"></div>
+							등록</label>
 					</div>
-				
+					<div class="resultId"></div>
+
+				</div>
+
 
 				<c:forEach var="d" items="${list}">
 					<li class="survey-item">
@@ -120,7 +153,7 @@
 					<h2>상세 내역</h2>
 					<form id="insert-form" name="insertDetailForm" method="post"
 						action="/MoneyManagementProject/accountdetail/insert">
-						<input type="hidden" name="aid" value="${a.aid}">
+						<input type="hidden" name="aid" id="aid" value="${a.aid}">
 						<table>
 
 							<tr>
