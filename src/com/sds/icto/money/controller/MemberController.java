@@ -95,4 +95,17 @@ public class MemberController {
 
 		return result;
 	}
+	@RequestMapping(value = "/searchId/{mid}", method = RequestMethod.GET)
+	@ResponseBody
+	public MemberVo searchId(@PathVariable("mid") String mid) {
+
+		
+		MemberVo vo = new MemberVo();
+		vo.setMid(mid);
+
+		vo = memberSev.authUser(vo);
+	
+
+		return vo;
+	}
 }

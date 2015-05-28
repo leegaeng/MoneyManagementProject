@@ -15,19 +15,33 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-
 		$(".accountdetails").css("display", "none");
+	
+		
+		$("#input-search").keydown(function() {
+			$.ajax({
+				url : "/MoneyManagementProject/member/searchId/" + $("#input-search").val(),
+				type : "get",
+				dataType : "json",
+				//	data : "",
+				//			    contentType: "application/json",
+				success : function(response) {
+					console.log(response);
+					
+					$(".resultId").html(response.mid+" "+response.mname+" <input type='button' value='추가'>");
+					
+				},
+				error : function(jqXHR, status, e) {
+					console.error(status + " : " + e);
+				}
 
-		$("#input-search").change(function() {
+			});
 
 		});
-
 	});
-
 	function list() {
 		location.href = "/MoneyManagementProject/accountbook/list";
 	}
-
 	function accountdetail() {
 		if ($(".accountdetails").css("display") == 'block') {
 			$(".accountdetails").css("display", "none");
@@ -35,9 +49,7 @@
 			$(".accountdetails").css("display", "block");
 		}
 	}
-
 	function insertmanagement() {
-
 	}
 </script>
 </head>
@@ -77,14 +89,14 @@
 					</tr>
 
 				</table>
-				<form action="insertManagement-form" class="search">
+			
 					<div class="field">
 
 						<input type="text" class="input-search" id="input-search"
 							name="input-search" required> <label for="input-search">친구
-							등록</label>
+							등록</label><div class="resultId"></div>
 					</div>
-				</form>
+				
 
 				<c:forEach var="d" items="${list}">
 					<li class="survey-item">
